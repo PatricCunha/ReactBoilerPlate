@@ -1,0 +1,24 @@
+{
+  "name": "reatcproject",
+  "version": "1.0.0",
+  "description": "http://browserify.org/#install\r https://github.com/andreypopp/reactify\r https://facebook.github.io/react/blog/2014/01/02/react-chrome-developer-tools.html\r https://github.com/BinaryMuse/chrome-fast-tab-switcher/tree/v1.0.1/scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "gulp-html-replace": "^1.5.4",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-react": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.4.1",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  }
+}

@@ -1,0 +1,11 @@
+call npm uninstall --save-dev gulp
+call npm uninstall --save-dev gulp-uglify
+call npm uninstall --save-dev gulp-react
+call npm uninstall --save-dev gulp-html-replace
+call npm uninstall --save-dev vinyl-source-stream
+call npm uninstall --save-dev browserify
+call npm uninstall --save-dev watchify
+call npm uninstall --save-dev reactify
+call npm uninstall --save-dev gulp-streamify
+call npm uninstall --save-dev gulp-minify-css
+call npm uninstall --save-dev gulp-rename
