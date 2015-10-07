@@ -1,41 +1,15 @@
-http://browserify.org/#install
-https://github.com/andreypopp/reactify
-https://facebook.github.io/react/blog/2014/01/02/react-chrome-developer-tools.html
-https://github.com/BinaryMuse/chrome-fast-tab-switcher/tree/v1.0.1/scripts
+Setup
 
-//React templates in simmilar to angular templates.
-http://wix.github.io/react-templates/
+1 - Clone the project.
 
-Following:
-http://tylermcginnis.com/reactjs-tutorial-pt-2-building-react-applications-with-gulp-and-browserify/
-for workflow creation
+2 - If you are creating a new project, delete package.json and run "npm init" on the project's root folder. Alternatively you can run "setup_newproject.bat"/"setup_newproject.sh" and skip step 2 and 3.
+ 
+3 - Run npm install or npm update on the project's root folder. If there are errors with the modules, you could try installing the modules manually.
 
-Create a project folder with the following structure, "js" and "css" folder's file names may differ
+//WARNING//
+These scripts forcefully install the latest version of modules, this might possibly break your app
+in production, consider updating manually in production after testing in dev.
 
-gulpfile.js // our gulp workflow will be coded here
-	src
-		index.html
-		js
-			App.js
-			Child.js
-			Parent.js
-		css
-			style.cs
+4 - Run "gulp dev" to start the dev task that watches changes to files and updates them in the debug directory.
 
-Run this in the node console in the project folder
-
-npm init //auto creates required files, necessary to accept modules
-		 //creates modules folder etc.
-
-npm install --global gulp
-npm install --save-dev gulp;
-npm install --save-dev gulp-uglify;
-npm install --save-dev gulp-react;
-npm install --save-dev gulp-html-replace;
-npm install --save-dev vinyl-source-stream;
-npm install --save-dev browserify;
-npm install --save-dev watchify;
-npm install --save-dev reactify;
-npm install --save-dev gulp-streamify;
-npm install --save-dev gulp-cssmin;
-
+5 - Run "gulp prod" to start the dev task that builds the project.
