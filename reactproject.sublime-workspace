@@ -131,6 +131,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "readme.txt",
+			"settings":
+			{
+				"buffer_size": 754,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Instructions.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 794,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -156,6 +180,8 @@
 	},
 	"file_history":
 	[
+		"/C/Users/User01/Desktop/Chrome Apps/reactproject/readme.txt",
+		"/C/Users/User01/Desktop/Chrome Apps/reactproject/.gitignore",
 		"/C/Users/User01/Desktop/Chrome Apps/reactproject/reactproject.sublime-project",
 		"/C/Users/User01/Desktop/Chrome Apps/reactproject/reactproject.sublime-workspace",
 		"/C/Users/User01/Desktop/Chrome Apps/reatcproject/gulpfile.js",
@@ -291,8 +317,89 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "readme.txt",
+					"settings":
+					{
+						"buffer_size": 754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								437,
+								437
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Instructions.txt",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 794,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								791,
+								791
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
