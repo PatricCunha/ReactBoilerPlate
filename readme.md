@@ -1,7 +1,7 @@
 # React Project BoilerPlate
 
 ## Do you need...
-**Minified** css and js? **Ugliefied** js? **Transpiled** jsx? Separate debug and release folders?
+**Minified** css and js? **Uglified** js? **Transpiled** jsx? Separate debug and release folders?
 A folder structure that kind of makes sense? **Browserified** js? On the fly browserfication?
 Install scripts for the 10 npm modules required?
  
@@ -38,13 +38,17 @@ To make everything work this project uses the following **npm** modules:
 
 ### [gulp-streamify](https://github.com/nfroidure/gulp-streamify)
  - Quoting directly from nfroidure's github
- 	> Wrap old Gulp plugins to support streams.
+
+ > Wrap old Gulp plugins to support streams.
 
 ### [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
  - Who doesn't love ugly js? Minifies js using [UglifyJS](https://github.com/mishoo/UglifyJS)
 
 ### [vinyl-source-stream](https://www.npmjs.com/package/vinyl-source-stream)
- - The easiest way to put it is this fine quote by [Eloy](http://stackoverflow.com/a/30851219)  		> Basically you can say that vinyl-source-stream convert the readable stream you get from browserify into a vinyl stream that is what gulp is expecting to get.
+ - The easiest way to put it is this fine quote by [Eloy](http://stackoverflow.com/a/30851219) 
+
+ > Basically you can say that vinyl-source-stream convert the readable stream you get from browserify into a vinyl stream that is what gulp is expecting to get.
+ 
  In other words browserify returns a regular readable stream, as do most npm modules. What **vinyl-source-stream** does is convert it to a vinyl stream for usage with gulp.
 
 ### [watchify](https://github.com/substack/watchify)
@@ -63,7 +67,7 @@ To use this project you will need **node.js**, **npm** and prefereably **gulp** 
  
 3. Run install_nodemodules.bat/.sh. If there are errors you could try installing the modules manually.
 
-## //WARNING//
+### //WARNING//
 These scripts forcefully install the latest version of modules, this might break your app
 in production, consider updating manually in production after testing in dev.
 
