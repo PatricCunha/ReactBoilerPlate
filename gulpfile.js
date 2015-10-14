@@ -8,6 +8,7 @@ var reactify = require('reactify');
 var streamify = require('gulp-streamify');
 var css = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var cleanhtml = require('gulp-cleanhtml');
 
 var path = {
   HTML: 'src/index.html',
@@ -72,6 +73,7 @@ gulp.task('replaceHTMLProd', function(){
       'js': 'js/' + path.MINIFIED_OUT,
       'css': 'css/' + path.MINIFIED_CSS
     }))
+    .pipe(cleanhtml())
     .pipe(gulp.dest(path.DEST_BUILD));
 });
 

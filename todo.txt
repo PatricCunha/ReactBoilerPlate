@@ -1,11 +1,11 @@
 TODO: 0;
-add gitignore, add this todo as tasks, create a proper readme
+add gitignore, add this todo as tasks
 
 TODO: 1;
 Let's get the .sh versions of the .bat scripts working
 
 TODO: 2;
-Auto generate js line on file changes for dev
+Auto generate js lint on file changes for dev
 
 // configure the jshint task
 gulp.task('jshint', function() {
@@ -25,3 +25,9 @@ Add lievereload or browsersync to get gulp to auto update your files in browser
 http://www.smashingmagazine.com/2014/06/building-with-gulp/
 
 has some code
+
+TODO: 4;
+Add an unit testing framework, probably jasmine + Karma.
+http://thejsguy.com/2015/01/12/jasmine-vs-mocha-chai-and-sinon.html
+http://www.rexfeng.com/blog/2014/07/how-to-unit-test-your-js-and-use-it-in-the-browser/
+https://github.com/sindresorhus/gulp-jasmine

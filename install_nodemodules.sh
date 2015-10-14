@@ -11,3 +11,4 @@ npm install --save-dev reactify@*
 npm install --save-dev gulp-streamify@*
 npm install --save-dev gulp-minify-css@*
 npm install --save-dev gulp-rename@*
+npm install --save-dev gulp-cleanhtml@*

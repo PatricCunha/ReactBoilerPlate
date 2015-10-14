@@ -132,27 +132,30 @@
 	"buffers":
 	[
 		{
-			"file": "readme.txt",
+			"file": "readme.md",
 			"settings":
 			{
-				"buffer_size": 754,
+				"buffer_size": 3597,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Instructions.txt",
+			"contents": "TODO: 0;\nadd gitignore, add this todo as tasks, create a proper readme\n\nTODO: 1;\nLet's get the .sh versions of the .bat scripts working\n\nTODO: 2;\nAuto generate js lint on file changes for dev\n\n// configure the jshint task\ngulp.task('jshint', function() {\n  return gulp.src('source/javascript/**/*.js')\n    .pipe(jshint())\n    .pipe(jshint.reporter('jshint-stylish'));\n});\n\n// configure which files to watch and what tasks to use on file changes\ngulp.task('watch', function() {\n  gulp.watch('source/javascript/**/*.js', ['jshint']);\n});\n\nTODO: 3;\nAdd lievereload or browsersync to get gulp to auto update your files in browser\n\nhttp://www.smashingmagazine.com/2014/06/building-with-gulp/\n\nhas some code",
+			"file": "todo.txt",
+			"file_size": 727,
+			"file_write_time": 130886888887035045,
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 701,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "package.json",
+			"file": "gulpfile.js",
 			"settings":
 			{
-				"buffer_size": 794,
-				"line_ending": "Unix"
+				"buffer_size": 5817,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -180,6 +183,8 @@
 	},
 	"file_history":
 	[
+		"/C/Users/User01/Desktop/Chrome Apps/reactproject/package.json",
+		"/C/Users/User01/Desktop/Chrome Apps/reactproject/Instructions.txt",
 		"/C/Users/User01/Desktop/Chrome Apps/reactproject/readme.txt",
 		"/C/Users/User01/Desktop/Chrome Apps/reactproject/.gitignore",
 		"/C/Users/User01/Desktop/Chrome Apps/reactproject/reactproject.sublime-project",
@@ -266,6 +271,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gulp-react",
+			"reactify",
+			"jsx",
+			"trans",
 			"MINIFIED_OUT",
 			"uglify",
 			"']);\n",
@@ -322,18 +331,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "readme.txt",
+					"file": "readme.md",
 					"settings":
 					{
-						"buffer_size": 754,
+						"buffer_size": 3597,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								437,
-								437
+								287,
+								287
 							]
 						],
 						"settings":
@@ -348,18 +357,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Instructions.txt",
+					"file": "todo.txt",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 701,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								535,
+								535
 							]
 						],
 						"settings":
@@ -374,23 +383,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "package.json",
+					"file": "gulpfile.js",
 					"settings":
 					{
-						"buffer_size": 794,
+						"buffer_size": 5817,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								791,
-								791
+								373,
+								373
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},

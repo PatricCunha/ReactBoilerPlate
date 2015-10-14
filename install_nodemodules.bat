@@ -10,3 +10,4 @@ call npm install --save-dev reactify@*
 call npm install --save-dev gulp-streamify@*
 call npm install --save-dev gulp-minify-css@*
 call npm install --save-dev gulp-rename@*
+call npm install --save-dev gulp-cleanhtml@*

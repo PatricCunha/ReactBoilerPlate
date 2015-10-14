@@ -9,3 +9,4 @@ call npm uninstall --save-dev reactify
 call npm uninstall --save-dev gulp-streamify
 call npm uninstall --save-dev gulp-minify-css
 call npm uninstall --save-dev gulp-rename
+call npm uninstall --save-dev gulp-cleanhtml
