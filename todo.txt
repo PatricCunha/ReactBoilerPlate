@@ -5,13 +5,27 @@ TODO: 1;
 Let's get the .sh versions of the .bat scripts working
 
 TODO: 2;
-Auto generate js lint on file changes for dev
+Error handling, we have a working solution, so the best path might be to just remove plumber
+from the required node modules. Try to figure out why it isn't working before removing.
 
-// configure the jshint task
-gulp.task('jshint', function() {
-  return gulp.src('source/javascript/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
+TODO: 3;
+JSHint is working, sadly browserified files don't lint well, might have to add back react,
+to transpile ".jsx" files to regualr ".js" before linting.
+
+var react = require('gulp-react');
+gulp.task('jshint', function () {
+    gulp.src(['views/*.jsx', 'views/**/*.jsx'])
+        .pipe(react()) //Must use react as it preserves lines from jsx to js compile
+        .pipe(streamify(jshint({
+            laxbreak: true,
+            laxcomma: true,
+            es3: true,
+            esnext: true, //JSHint Harmony/ES6
+            eqnull: true,
+            browser: true,
+            jquery: true
+        })))
+        .pipe(jshint.reporter('jshint-stylish'))
 });
 
 // configure which files to watch and what tasks to use on file changes
@@ -19,14 +33,14 @@ gulp.task('watch', function() {
   gulp.watch('source/javascript/**/*.js', ['jshint']);
 });
 
-TODO: 3;
+TODO: 4;
 Add lievereload or browsersync to get gulp to auto update your files in browser
 
 http://www.smashingmagazine.com/2014/06/building-with-gulp/
 
 has some code
 
-TODO: 4;
+TODO: 5;
 Add an unit testing framework, probably jasmine + Karma.
 http://thejsguy.com/2015/01/12/jasmine-vs-mocha-chai-and-sinon.html
 http://www.rexfeng.com/blog/2014/07/how-to-unit-test-your-js-and-use-it-in-the-browser/

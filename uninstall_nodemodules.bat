@@ -10,3 +10,7 @@ call npm uninstall --save-dev gulp-streamify
 call npm uninstall --save-dev gulp-minify-css
 call npm uninstall --save-dev gulp-rename
 call npm uninstall --save-dev gulp-cleanhtml
+call npm uninstall --save-dev gulp-jshint
+call npm uninstall --save-dev jshint-stylish
+call npm uninstall --save-dev gulp-util
+call npm uninstall --save-dev gulp-plumber

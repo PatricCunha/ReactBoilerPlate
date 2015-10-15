@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var uglify = require('gulp-uglify');
 var htmlreplace = require('gulp-html-replace');
 var source = require('vinyl-source-stream');
@@ -9,6 +10,9 @@ var streamify = require('gulp-streamify');
 var css = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var cleanhtml = require('gulp-cleanhtml');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var plumber = require('gulp-plumber');
 
 var path = {
   HTML: 'src/index.html',
@@ -27,6 +31,7 @@ var path = {
   DEST_BUILD: 'dist/build',
   DEST_BUILD_CSS: 'dist/build/css',
  	DEST_BUILD_JS: 'dist/build/js',
+  DEST_BUILD_JS_FILES: ['dist/build/js/*.js', 'dist/build/js/**/*.js'],
   ENTRY_POINT: './src/js/App.js'
 };
 
@@ -41,6 +46,14 @@ var path = {
 // 	gulp.src(path.HTML)
 //     .pipe(gulp.dest(path.BUILD));
 // });
+
+//Print out error messages
+//Play error sound
+var onError = function (err) {  
+  gutil.beep();
+  gutil.log(gutil.colors.red('Error (' + err.plugin + '): ' + err.message));
+  this.emit('end'); // Keep gulp from hanging on this task, possibly not required
+};
 
 //Let's copy css
 gulp.task('cssDev', function () {
@@ -60,7 +73,7 @@ gulp.task('replaceHTMLDev', function(){
   gulp.src(path.HTML)
     .pipe(htmlreplace({
       'js': 'js/' + path.OUT,
-      'css': 'css/' + path.CSS_OUT
+      'css': 'css/' + path.CSS_OUT,
     }))
     .pipe(gulp.dest(path.DEST_DEBUG));
 });
@@ -108,7 +121,20 @@ gulp.task('watch', function() {
     	cache: {}, packageCache: {}, fullPaths: true
   	})
   );
-
+  //The actual browserify bundling function
+  var rebundle = function () {
+    var start = Date.now();
+    gutil.log('Building APP bundle');
+    watcher
+      .bundle()
+      .on('error', onError)
+      // .pipe(plumber({ errorHandler: onError }))
+      //we take the output
+      .pipe(source(path.OUT))
+      //and send it to dest/src
+      .pipe(gulp.dest(path.DEST_DEBUG_JS)); 
+      gutil.log('APP bundle built in ' + (Date.now() - start) + 'ms');
+  };
 
 	// Basic JavaScript: After one hour, we call
     // watcher.end to end the watch process and thus
@@ -138,41 +164,39 @@ gulp.task('watch', function() {
         watcher.end
       }, 60*60*1000);
     });
-    //Watch for updates on jsx files (app.js and it's children components)
-  	return watcher.on('update', function () {
-  		//Concatenate everything to one file
-  		//make requires work
-    	watcher.bundle()
-    	//we take the output
-      	.pipe(source(path.OUT))
-      	//and send it to dest/src
-      	.pipe(gulp.dest(path.DEST_DEBUG_JS))
-      	console.log('Updated');
+    watcher.on('change', function() {
         clearTimeout(timeout);
         timeout = setTimeout(function () {
           watcherHTML.end
           watcherCSS.end
           watcher.end
         }, 60*60*1000);
-  	})
-    .bundle()
-    .pipe(source(path.OUT))
-    .pipe(gulp.dest(path.DEST_DEBUG_JS));
+    });
+    //Watch for updates on jsx files (app.js and it's children components)
+  	watcher.on('update', rebundle);
+    rebundle();
 });
-
+//Lints production js
+gulp.task('lintProd', function () {
+  return gulp.src(path.DEST_BUILD_JS_FILES)
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter('fail'));
+});
 //Build = transpile + minify + uglify
 gulp.task('build', function(){
 	//as explained in 'watch' function
 	browserify({
 	    entries: [path.ENTRY_POINT],
 	    transform: [reactify]
-	  })
+	  })    
 	  	//Concatenate everything to one file
 	  	//make requires work
-	    .bundle()    	
+	    .bundle() 
+      .on('error', onError)
 	    //we take the minified output from browserify
 	    //it generates both normal and minified results
-	    .pipe(source(path.MINIFIED_OUT))
+	    .pipe(source(path.MINIFIED_OUT))  
 	    //we uglify it
 	    .pipe(streamify(uglify( { file:path.MINIFIED_OUT })))
 	    //we send it to dist/build
@@ -180,7 +204,13 @@ gulp.task('build', function(){
 });
 
 //Run dev tasks
-gulp.task('dev', ['watch']);
-
+gulp.task('dev', ['replaceHTMLDev', 'cssDev', 'watch']);
 //Run prod tasks
-gulp.task('prod', ['replaceHTMLProd', 'cssProd', 'build']);
+gulp.task('prod', ['lintProd', 'replaceHTMLProd', 'cssProd', 'build', 'lintProd']);
+
+    // .pipe(plumber({ errorHandler: onError }))
+    // .pipe(plumber.stop())
+
+        //    .on('error', function(err) {
+        //     return notify().write(err);
+        // })

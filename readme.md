@@ -3,14 +3,14 @@
 ## Do you need...
 **Minified** css and js? **Uglified** js? **Transpiled** jsx? Separate debug and release folders?
 A folder structure that kind of makes sense? **Browserified** js? On the fly browserfication?
-Install scripts for the ~10 npm modules required? Clean html?
+Install scripts for the ~10 npm modules required? Clean html? Auto generated stylish **JSlint**?
  
 Use this boilerplate project.
  
 ## Do you also want...
-Auto generated **JSlint**? Auto updating files in your browser during development?
+Auto updating files in your browser during development?
  
-Well... those are coming soon™
+Well... that's coming soon™
 
 ## Details
 
@@ -57,6 +57,63 @@ To make everything work this project uses the following **npm** modules:
 ### [gulp-cleanhtml](https://github.com/hemanth/gulp-cleanhtml)
  - Cleans comments and whitespace from your html files.
 
+### [gulp-jshint](https://github.com/spalger/gulp-jshint)
+ - Some javascript lint for our debug task.
+
+### [jshint-stylish](https://github.com/sindresorhus/jshint-stylish)
+ - Make our lint output easier on the eye.
+
+### [gulp-util](https://github.com/gulpjs/gulp-util)
+ - Used for stylish gulp task logging and replacing file extensions.
+
+### [gulp-plumber](https://www.npmjs.com/package/gulp-plumber)
+ - Hepls us handling errors;
+
+# Project structure
+
+|   .gitignore
+|   gulpfile.js
+|   install_nodemodules.bat
+|   install_nodemodules.sh
+|   package.json
+|   reactproject.sublime-project
+|   reactproject.sublime-workspace
+|   readme.md
+|   setup_newproject.bat
+|   todo.txt
+|   tree.txt
+|   uninstall_nodemodules.bat
+|   
++---dist
+|   +---build
+|   |   |   index.html
+|   |   |   
+|   |   +---css
+|   |   |       build.min.css
+|   |   |       
+|   |   \---js
+|   |           build.min.js
+|   |           
+|   \---debug
+|       |   index.html
+|       |   
+|       +---css
+|       |       main.css
+|       |       
+|       \---js
+|               build.js
+|               
+\---src
+    |   index.html
+    |   
+    +---css
+    |       main.css
+    |       
+    \---js
+            App.js
+            Child.js
+            Parent.js
+
 # Requirements
  
 To use this project you will need **node.js**, **npm** and prefereably **gulp** installed globally.
@@ -73,21 +130,42 @@ To use this project you will need **node.js**, **npm** and prefereably **gulp** 
 These scripts forcefully install the latest version of modules, this might break your app
 in production, consider updating manually in production after testing in dev.
 
-## A list of modules to install
+# NPM packages
 
 npm install --global gulp@*
+ 
 npm install --save-dev gulp@*
+ 
+npm install --save-dev gulp-util@*
+ 
 npm install --save-dev gulp-uglify@*
+ 
 npm install --save-dev gulp-react@*
+ 
 npm install --save-dev gulp-html-replace@*
+ 
 npm install --save-dev vinyl-source-stream@*
+ 
 npm install --save-dev browserify@*
+ 
 npm install --save-dev watchify@*
+ 
 npm install --save-dev reactify@*
+ 
 npm install --save-dev gulp-streamify@*
+ 
 npm install --save-dev gulp-minify-css@*
+ 
 npm install --save-dev gulp-rename@*
+ 
 npm install --save-dev gulp-cleanhtml@*
+ 
+npm install --save-dev gulp-jshint@*
+ 
+npm install --save-dev jshint-stylish@*
+ 
+npm install --save-dev gulp-plumber@*
+
 
 # Developing
 

@@ -12,3 +12,7 @@ npm install --save-dev gulp-streamify@*
 npm install --save-dev gulp-minify-css@*
 npm install --save-dev gulp-rename@*
 npm install --save-dev gulp-cleanhtml@*
+npm install --save-dev gulp-jshint@*
+npm install --save-dev jshint-stylish@*
+npm install --save-dev gulp-util@*
+npm install --save-dev gulp-plumber@*

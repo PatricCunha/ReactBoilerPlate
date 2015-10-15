@@ -1,0 +1,42 @@
+|   .gitignore
+|   gulpfile.js
+|   install_nodemodules.bat
+|   install_nodemodules.sh
+|   package.json
+|   reactproject.sublime-project
+|   reactproject.sublime-workspace
+|   readme.md
+|   setup_newproject.bat
+|   todo.txt
+|   tree.txt
+|   uninstall_nodemodules.bat
+|   
++---dist
+|   +---build
+|   |   |   index.html
+|   |   |   
+|   |   +---css
+|   |   |       build.min.css
+|   |   |       
+|   |   \---js
+|   |           build.min.js
+|   |           
+|   \---debug
+|       |   index.html
+|       |   
+|       +---css
+|       |       main.css
+|       |       
+|       \---js
+|               build.js
+|               
+\---src
+    |   index.html
+    |   
+    +---css
+    |       main.css
+    |       
+    \---js
+            App.js
+            Child.js
+            Parent.js

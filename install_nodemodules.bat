@@ -1,5 +1,6 @@
 call npm install --global gulp@*
 call npm install --save-dev gulp@*
+call npm install --save-dev gulp-util@*
 call npm install --save-dev gulp-uglify@*
 call npm install --save-dev gulp-react@*
 call npm install --save-dev gulp-html-replace@*
@@ -11,3 +12,6 @@ call npm install --save-dev gulp-streamify@*
 call npm install --save-dev gulp-minify-css@*
 call npm install --save-dev gulp-rename@*
 call npm install --save-dev gulp-cleanhtml@*
+call npm install --save-dev gulp-jshint@*
+call npm install --save-dev jshint-stylish@*
+call npm install --save-dev gulp-plumber@*
